@@ -1,0 +1,11 @@
+build*
+*.pro
+*Makefile.Debug
+*Makefile.Release
+Makefile
+*.o
+*.a
+*.dll
+*moc_predefs.h
+*.stash
+*.user
