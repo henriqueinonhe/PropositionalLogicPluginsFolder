@@ -12,9 +12,9 @@ class PROOFWITHHYPOTHESISPLUGINSHARED_EXPORT ProofWithHypothesisPlugin : public 
 public:
     ProofWithHypothesisPlugin();
 
-    shared_ptr<Proof> instance() const;
-    shared_ptr<Proof> instance(const uint id, const QString &name, const QString &description, const QVector<Formula> &premises, const Formula &conclusion) const;
-
+    shared_ptr<Proof> instance() const override;
+    shared_ptr<Proof> instance(const uint id, const QString &name, const QString &description, const QVector<Formula> &premises, const Formula &conclusion) const override;
+    shared_ptr<Proof> instance(QDataStream &stream, const Signature * const signature) const override;
 };
 
 #endif // PROOFWITHHYPOTHESISPLUGIN_H

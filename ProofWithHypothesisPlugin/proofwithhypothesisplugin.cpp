@@ -12,6 +12,11 @@ shared_ptr<Proof> ProofWithHypothesisPlugin::instance() const
 
 shared_ptr<Proof> ProofWithHypothesisPlugin::instance(const uint id, const QString &name, const QString &description, const QVector<Formula> &premises, const Formula &conclusion) const
 {
-    return make_shared<ProofWithHypothesis>(id, name, description, premises, conclusion);
+    return Proof::createNewProof<ProofWithHypothesis>(id, name, description, premises, conclusion);
+}
+
+shared_ptr<Proof> ProofWithHypothesisPlugin::instance(QDataStream &stream, const Signature * const signature) const
+{
+    return make_shared<ProofWithHypothesis>(stream, signature);
 }
 
